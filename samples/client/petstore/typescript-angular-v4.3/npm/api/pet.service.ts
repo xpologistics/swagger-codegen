@@ -97,11 +97,13 @@ export class PetService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.post<any>(`${this.basePath}/pet`, body, 
-        {
-            headers: headers,
-            withCredentials: this.configuration.withCredentials,
-        });
+        return this.httpClient.post<any>(`${this.basePath}/pet`,
+            body, 
+            {
+                headers: headers,
+                withCredentials: this.configuration.withCredentials,
+            }
+        );
     }
 
     /**
@@ -142,11 +144,12 @@ export class PetService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.delete<any>(`${this.basePath}/pet/${encodeURIComponent(String(petId))}`, 
-        {
-            headers: headers,
-            withCredentials: this.configuration.withCredentials,
-        });
+        return this.httpClient.delete<any>(`${this.basePath}/pet/${encodeURIComponent(String(petId))}`,
+            {
+                headers: headers,
+                withCredentials: this.configuration.withCredentials,
+            }
+        );
     }
 
     /**
@@ -188,12 +191,13 @@ export class PetService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<any>(`${this.basePath}/pet/findByStatus`, 
-        {
-            params: queryParameters,
-            headers: headers,
-            withCredentials: this.configuration.withCredentials,
-        });
+        return this.httpClient.get<any>(`${this.basePath}/pet/findByStatus`,
+            {
+                params: queryParameters,
+                headers: headers,
+                withCredentials: this.configuration.withCredentials,
+            }
+        );
     }
 
     /**
@@ -235,12 +239,13 @@ export class PetService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<any>(`${this.basePath}/pet/findByTags`, 
-        {
-            params: queryParameters,
-            headers: headers,
-            withCredentials: this.configuration.withCredentials,
-        });
+        return this.httpClient.get<any>(`${this.basePath}/pet/findByTags`,
+            {
+                params: queryParameters,
+                headers: headers,
+                withCredentials: this.configuration.withCredentials,
+            }
+        );
     }
 
     /**
@@ -274,11 +279,12 @@ export class PetService {
         let consumes: string[] = [
         ];
 
-        return this.httpClient.get<any>(`${this.basePath}/pet/${encodeURIComponent(String(petId))}`, 
-        {
-            headers: headers,
-            withCredentials: this.configuration.withCredentials,
-        });
+        return this.httpClient.get<any>(`${this.basePath}/pet/${encodeURIComponent(String(petId))}`,
+            {
+                headers: headers,
+                withCredentials: this.configuration.withCredentials,
+            }
+        );
     }
 
     /**
@@ -321,11 +327,13 @@ export class PetService {
             headers = headers.set("Content-Type", httpContentTypeSelected);
         }
 
-        return this.httpClient.put<any>(`${this.basePath}/pet`, body, 
-        {
-            headers: headers,
-            withCredentials: this.configuration.withCredentials,
-        });
+        return this.httpClient.put<any>(`${this.basePath}/pet`,
+            body, 
+            {
+                headers: headers,
+                withCredentials: this.configuration.withCredentials,
+            }
+        );
     }
 
     /**
@@ -383,11 +391,13 @@ export class PetService {
             formParams = formParams.append('status', <any>status) || formParams;
         }
 
-        return this.httpClient.post<any>(`${this.basePath}/pet/${encodeURIComponent(String(petId))}`, 
-        convertFormParamsToString ? formParams.toString() : formParams, {
-            headers: headers,
-            withCredentials: this.configuration.withCredentials,
-        });
+        return this.httpClient.post<any>(`${this.basePath}/pet/${encodeURIComponent(String(petId))}`,
+            convertFormParamsToString ? formParams.toString() : formParams, 
+            {
+                headers: headers,
+                withCredentials: this.configuration.withCredentials,
+            }
+        );
     }
 
     /**
@@ -447,11 +457,13 @@ export class PetService {
             formParams = formParams.append('file', <any>file) || formParams;
         }
 
-        return this.httpClient.post<any>(`${this.basePath}/pet/${encodeURIComponent(String(petId))}/uploadImage`, 
-        convertFormParamsToString ? formParams.toString() : formParams, {
-            headers: headers,
-            withCredentials: this.configuration.withCredentials,
-        });
+        return this.httpClient.post<any>(`${this.basePath}/pet/${encodeURIComponent(String(petId))}/uploadImage`,
+            convertFormParamsToString ? formParams.toString() : formParams, 
+            {
+                headers: headers,
+                withCredentials: this.configuration.withCredentials,
+            }
+        );
     }
 
 }
