@@ -2,7 +2,6 @@ package io.swagger.client.api;
 
 import io.swagger.client.CollectionFormats.*;
 
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -27,7 +26,7 @@ public interface FakeApi {
    * @return Call&lt;Boolean&gt;
    */
   @POST("fake/outer/boolean")
-  Call<Boolean> fakeOuterBooleanSerialize(
+  <Boolean> fakeOuterBooleanSerialize(
     @retrofit2.http.Body Boolean body
   );
 
@@ -38,7 +37,7 @@ public interface FakeApi {
    * @return Call&lt;OuterComposite&gt;
    */
   @POST("fake/outer/composite")
-  Call<OuterComposite> fakeOuterCompositeSerialize(
+  <OuterComposite> fakeOuterCompositeSerialize(
     @retrofit2.http.Body OuterComposite body
   );
 
@@ -49,7 +48,7 @@ public interface FakeApi {
    * @return Call&lt;BigDecimal&gt;
    */
   @POST("fake/outer/number")
-  Call<BigDecimal> fakeOuterNumberSerialize(
+  <BigDecimal> fakeOuterNumberSerialize(
     @retrofit2.http.Body BigDecimal body
   );
 
@@ -60,7 +59,7 @@ public interface FakeApi {
    * @return Call&lt;String&gt;
    */
   @POST("fake/outer/string")
-  Call<String> fakeOuterStringSerialize(
+  <String> fakeOuterStringSerialize(
     @retrofit2.http.Body String body
   );
 
@@ -74,7 +73,7 @@ public interface FakeApi {
     "Content-Type:application/json"
   })
   @PATCH("fake")
-  Call<Client> testClientModel(
+  <Client> testClientModel(
     @retrofit2.http.Body Client body
   );
 
@@ -99,7 +98,7 @@ public interface FakeApi {
    */
   @retrofit2.http.FormUrlEncoded
   @POST("fake")
-  Call<Void> testEndpointParameters(
+  <Void> testEndpointParameters(
     @retrofit2.http.Field("number") BigDecimal number, @retrofit2.http.Field("double") Double _double, @retrofit2.http.Field("pattern_without_delimiter") String patternWithoutDelimiter, @retrofit2.http.Field("byte") byte[] _byte, @retrofit2.http.Field("integer") Integer integer, @retrofit2.http.Field("int32") Integer int32, @retrofit2.http.Field("int64") Long int64, @retrofit2.http.Field("float") Float _float, @retrofit2.http.Field("string") String string, @retrofit2.http.Field("binary") byte[] binary, @retrofit2.http.Field("date") LocalDate date, @retrofit2.http.Field("dateTime") OffsetDateTime dateTime, @retrofit2.http.Field("password") String password, @retrofit2.http.Field("callback") String paramCallback
   );
 
@@ -118,7 +117,7 @@ public interface FakeApi {
    */
   @retrofit2.http.FormUrlEncoded
   @GET("fake")
-  Call<Void> testEnumParameters(
+  <Void> testEnumParameters(
     @retrofit2.http.Field("enum_form_string_array") List<String> enumFormStringArray, @retrofit2.http.Field("enum_form_string") String enumFormString, @retrofit2.http.Header("enum_header_string_array") List<String> enumHeaderStringArray, @retrofit2.http.Header("enum_header_string") String enumHeaderString, @retrofit2.http.Query("enum_query_string_array") CSVParams enumQueryStringArray, @retrofit2.http.Query("enum_query_string") String enumQueryString, @retrofit2.http.Query("enum_query_integer") Integer enumQueryInteger, @retrofit2.http.Field("enum_query_double") Double enumQueryDouble
   );
 
@@ -132,7 +131,7 @@ public interface FakeApi {
     "Content-Type:application/json"
   })
   @POST("fake/inline-additionalProperties")
-  Call<Void> testInlineAdditionalProperties(
+  <Void> testInlineAdditionalProperties(
     @retrofit2.http.Body Object param
   );
 
@@ -145,7 +144,7 @@ public interface FakeApi {
    */
   @retrofit2.http.FormUrlEncoded
   @GET("fake/jsonFormData")
-  Call<Void> testJsonFormData(
+  <Void> testJsonFormData(
     @retrofit2.http.Field("param") String param, @retrofit2.http.Field("param2") String param2
   );
 

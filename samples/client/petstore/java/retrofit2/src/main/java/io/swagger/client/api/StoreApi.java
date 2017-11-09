@@ -2,7 +2,6 @@ package io.swagger.client.api;
 
 import io.swagger.client.CollectionFormats.*;
 
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -23,7 +22,7 @@ public interface StoreApi {
    * @return Call&lt;Void&gt;
    */
   @DELETE("store/order/{order_id}")
-  Call<Void> deleteOrder(
+  <Void> deleteOrder(
     @retrofit2.http.Path("order_id") String orderId
   );
 
@@ -33,7 +32,7 @@ public interface StoreApi {
    * @return Call&lt;Map&lt;String, Integer&gt;&gt;
    */
   @GET("store/inventory")
-  Call<Map<String, Integer>> getInventory();
+  <Map<String, Integer>> getInventory();
     
 
   /**
@@ -43,7 +42,7 @@ public interface StoreApi {
    * @return Call&lt;Order&gt;
    */
   @GET("store/order/{order_id}")
-  Call<Order> getOrderById(
+  <Order> getOrderById(
     @retrofit2.http.Path("order_id") Long orderId
   );
 
@@ -54,7 +53,7 @@ public interface StoreApi {
    * @return Call&lt;Order&gt;
    */
   @POST("store/order")
-  Call<Order> placeOrder(
+  <Order> placeOrder(
     @retrofit2.http.Body Order body
   );
 

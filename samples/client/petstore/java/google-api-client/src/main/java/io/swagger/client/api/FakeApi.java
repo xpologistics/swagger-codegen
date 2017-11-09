@@ -58,13 +58,12 @@ public class FakeApi {
   /**
     * Test serialization of outer boolean types
     * <p><b>200</b> - Output boolean
-    * @param body Input boolean as post body
     * @param params Map of query params. A collection will be interpreted as passing in multiple instances of the same query param.
     * @return Boolean
     * @throws IOException if an error occurs while attempting to invoke the API
     **/
-    public Boolean fakeOuterBooleanSerialize(Boolean body, Map<String, Object> params) throws IOException {
-        HttpResponse response = fakeOuterBooleanSerializeForHttpResponse(body, params);
+    public Boolean fakeOuterBooleanSerialize(Map<String, Object> params) throws IOException {
+        HttpResponse response = fakeOuterBooleanSerializeForHttpResponse(params);
         TypeReference typeRef = new TypeReference<Boolean>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
@@ -81,7 +80,7 @@ public class FakeApi {
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.POST, genericUrl, content).execute();
     }
 
-    public HttpResponse fakeOuterBooleanSerializeForHttpResponse(Boolean body, Map<String, Object> params) throws IOException {
+    public HttpResponse fakeOuterBooleanSerializeForHttpResponse(Map<String, Object> params) throws IOException {
         Object postBody = body;
         
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/fake/outer/boolean");
@@ -128,13 +127,12 @@ public class FakeApi {
   /**
     * Test serialization of object with outer number type
     * <p><b>200</b> - Output composite
-    * @param body Input composite as post body
     * @param params Map of query params. A collection will be interpreted as passing in multiple instances of the same query param.
     * @return OuterComposite
     * @throws IOException if an error occurs while attempting to invoke the API
     **/
-    public OuterComposite fakeOuterCompositeSerialize(OuterComposite body, Map<String, Object> params) throws IOException {
-        HttpResponse response = fakeOuterCompositeSerializeForHttpResponse(body, params);
+    public OuterComposite fakeOuterCompositeSerialize(Map<String, Object> params) throws IOException {
+        HttpResponse response = fakeOuterCompositeSerializeForHttpResponse(params);
         TypeReference typeRef = new TypeReference<OuterComposite>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
@@ -151,7 +149,7 @@ public class FakeApi {
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.POST, genericUrl, content).execute();
     }
 
-    public HttpResponse fakeOuterCompositeSerializeForHttpResponse(OuterComposite body, Map<String, Object> params) throws IOException {
+    public HttpResponse fakeOuterCompositeSerializeForHttpResponse(Map<String, Object> params) throws IOException {
         Object postBody = body;
         
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/fake/outer/composite");
@@ -198,13 +196,12 @@ public class FakeApi {
   /**
     * Test serialization of outer number types
     * <p><b>200</b> - Output number
-    * @param body Input number as post body
     * @param params Map of query params. A collection will be interpreted as passing in multiple instances of the same query param.
     * @return BigDecimal
     * @throws IOException if an error occurs while attempting to invoke the API
     **/
-    public BigDecimal fakeOuterNumberSerialize(BigDecimal body, Map<String, Object> params) throws IOException {
-        HttpResponse response = fakeOuterNumberSerializeForHttpResponse(body, params);
+    public BigDecimal fakeOuterNumberSerialize(Map<String, Object> params) throws IOException {
+        HttpResponse response = fakeOuterNumberSerializeForHttpResponse(params);
         TypeReference typeRef = new TypeReference<BigDecimal>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
@@ -221,7 +218,7 @@ public class FakeApi {
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.POST, genericUrl, content).execute();
     }
 
-    public HttpResponse fakeOuterNumberSerializeForHttpResponse(BigDecimal body, Map<String, Object> params) throws IOException {
+    public HttpResponse fakeOuterNumberSerializeForHttpResponse(Map<String, Object> params) throws IOException {
         Object postBody = body;
         
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/fake/outer/number");
@@ -268,13 +265,12 @@ public class FakeApi {
   /**
     * Test serialization of outer string types
     * <p><b>200</b> - Output string
-    * @param body Input string as post body
     * @param params Map of query params. A collection will be interpreted as passing in multiple instances of the same query param.
     * @return String
     * @throws IOException if an error occurs while attempting to invoke the API
     **/
-    public String fakeOuterStringSerialize(String body, Map<String, Object> params) throws IOException {
-        HttpResponse response = fakeOuterStringSerializeForHttpResponse(body, params);
+    public String fakeOuterStringSerialize(Map<String, Object> params) throws IOException {
+        HttpResponse response = fakeOuterStringSerializeForHttpResponse(params);
         TypeReference typeRef = new TypeReference<String>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
@@ -291,7 +287,7 @@ public class FakeApi {
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.POST, genericUrl, content).execute();
     }
 
-    public HttpResponse fakeOuterStringSerializeForHttpResponse(String body, Map<String, Object> params) throws IOException {
+    public HttpResponse fakeOuterStringSerializeForHttpResponse(Map<String, Object> params) throws IOException {
         Object postBody = body;
         
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/fake/outer/string");

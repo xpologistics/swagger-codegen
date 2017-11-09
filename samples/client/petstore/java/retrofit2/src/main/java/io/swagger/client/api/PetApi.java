@@ -2,7 +2,6 @@ package io.swagger.client.api;
 
 import io.swagger.client.CollectionFormats.*;
 
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -28,7 +27,7 @@ public interface PetApi {
     "Content-Type:application/json"
   })
   @POST("pet")
-  Call<Void> addPet(
+  <Void> addPet(
     @retrofit2.http.Body Pet body
   );
 
@@ -40,7 +39,7 @@ public interface PetApi {
    * @return Call&lt;Void&gt;
    */
   @DELETE("pet/{petId}")
-  Call<Void> deletePet(
+  <Void> deletePet(
     @retrofit2.http.Path("petId") Long petId, @retrofit2.http.Header("api_key") String apiKey
   );
 
@@ -51,7 +50,7 @@ public interface PetApi {
    * @return Call&lt;List&lt;Pet&gt;&gt;
    */
   @GET("pet/findByStatus")
-  Call<List<Pet>> findPetsByStatus(
+  <List<Pet>> findPetsByStatus(
     @retrofit2.http.Query("status") CSVParams status
   );
 
@@ -62,7 +61,7 @@ public interface PetApi {
    * @return Call&lt;List&lt;Pet&gt;&gt;
    */
   @GET("pet/findByTags")
-  Call<List<Pet>> findPetsByTags(
+  <List<Pet>> findPetsByTags(
     @retrofit2.http.Query("tags") CSVParams tags
   );
 
@@ -73,7 +72,7 @@ public interface PetApi {
    * @return Call&lt;Pet&gt;
    */
   @GET("pet/{petId}")
-  Call<Pet> getPetById(
+  <Pet> getPetById(
     @retrofit2.http.Path("petId") Long petId
   );
 
@@ -87,7 +86,7 @@ public interface PetApi {
     "Content-Type:application/json"
   })
   @PUT("pet")
-  Call<Void> updatePet(
+  <Void> updatePet(
     @retrofit2.http.Body Pet body
   );
 
@@ -101,7 +100,7 @@ public interface PetApi {
    */
   @retrofit2.http.FormUrlEncoded
   @POST("pet/{petId}")
-  Call<Void> updatePetWithForm(
+  <Void> updatePetWithForm(
     @retrofit2.http.Path("petId") Long petId, @retrofit2.http.Field("name") String name, @retrofit2.http.Field("status") String status
   );
 
@@ -115,7 +114,7 @@ public interface PetApi {
    */
   @retrofit2.http.Multipart
   @POST("pet/{petId}/uploadImage")
-  Call<ModelApiResponse> uploadFile(
+  <ModelApiResponse> uploadFile(
     @retrofit2.http.Path("petId") Long petId, @retrofit2.http.Part("additionalMetadata") String additionalMetadata, @retrofit2.http.Part("file\"; filename=\"file") RequestBody file
   );
 

@@ -2,7 +2,6 @@ package io.swagger.client.api;
 
 import io.swagger.client.CollectionFormats.*;
 
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -23,7 +22,7 @@ public interface UserApi {
    * @return Call&lt;Void&gt;
    */
   @POST("user")
-  Call<Void> createUser(
+  <Void> createUser(
     @retrofit2.http.Body User body
   );
 
@@ -34,7 +33,7 @@ public interface UserApi {
    * @return Call&lt;Void&gt;
    */
   @POST("user/createWithArray")
-  Call<Void> createUsersWithArrayInput(
+  <Void> createUsersWithArrayInput(
     @retrofit2.http.Body List<User> body
   );
 
@@ -45,7 +44,7 @@ public interface UserApi {
    * @return Call&lt;Void&gt;
    */
   @POST("user/createWithList")
-  Call<Void> createUsersWithListInput(
+  <Void> createUsersWithListInput(
     @retrofit2.http.Body List<User> body
   );
 
@@ -56,7 +55,7 @@ public interface UserApi {
    * @return Call&lt;Void&gt;
    */
   @DELETE("user/{username}")
-  Call<Void> deleteUser(
+  <Void> deleteUser(
     @retrofit2.http.Path("username") String username
   );
 
@@ -67,7 +66,7 @@ public interface UserApi {
    * @return Call&lt;User&gt;
    */
   @GET("user/{username}")
-  Call<User> getUserByName(
+  <User> getUserByName(
     @retrofit2.http.Path("username") String username
   );
 
@@ -79,7 +78,7 @@ public interface UserApi {
    * @return Call&lt;String&gt;
    */
   @GET("user/login")
-  Call<String> loginUser(
+  <String> loginUser(
     @retrofit2.http.Query("username") String username, @retrofit2.http.Query("password") String password
   );
 
@@ -89,7 +88,7 @@ public interface UserApi {
    * @return Call&lt;Void&gt;
    */
   @GET("user/logout")
-  Call<Void> logoutUser();
+  <Void> logoutUser();
     
 
   /**
@@ -100,7 +99,7 @@ public interface UserApi {
    * @return Call&lt;Void&gt;
    */
   @PUT("user/{username}")
-  Call<Void> updateUser(
+  <Void> updateUser(
     @retrofit2.http.Path("username") String username, @retrofit2.http.Body User body
   );
 
