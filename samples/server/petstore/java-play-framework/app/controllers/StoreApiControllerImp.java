@@ -9,11 +9,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.io.FileInputStream;
 import javax.validation.constraints.*;
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaPlayFrameworkCodegen", date = "2017-11-13T13:20:10.247+03:00")
 
 public class StoreApiControllerImp implements StoreApiControllerImpInterface {
     @Override
     public void deleteOrder(String orderId) throws Exception {
         //Do your magic!!!
+        
     }
 
     @Override

@@ -10,9 +10,11 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Category
+ * A category for a pet
  */
+@ApiModel(description = "A category for a pet")
 @Validated
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-11-13T13:20:17.202+03:00")
 
 public class Category   {
   @JsonProperty("id")
