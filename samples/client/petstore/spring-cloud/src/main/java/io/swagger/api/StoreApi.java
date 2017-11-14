@@ -34,7 +34,8 @@ public interface StoreApi {
         produces = "application/json",
         consumes = "application/json",
         method = RequestMethod.DELETE)
-    com.netflix.hystrix.HystrixCommand<ResponseEntity<Void>> deleteOrder(@ApiParam(value = "ID of the order that needs to be deleted",required=true) @PathVariable("orderId") String orderId);
+    com.netflix.hystrix.HystrixCommand<ResponseEntity<Void>> deleteOrder(@ApiParam(value = "ID of the order that needs to be deleted",required=true) @PathVariable("orderId") String orderId
+);
 
 
     @ApiOperation(value = "Returns pet inventories by status", nickname = "getInventory", notes = "Returns a map of status codes to quantities", response = Integer.class, responseContainer = "Map", authorizations = {
@@ -58,7 +59,8 @@ public interface StoreApi {
         produces = "application/json",
         consumes = "application/json",
         method = RequestMethod.GET)
-    com.netflix.hystrix.HystrixCommand<ResponseEntity<Order>> getOrderById(@Min(1) @Max(5) @ApiParam(value = "ID of pet that needs to be fetched",required=true) @PathVariable("orderId") Long orderId);
+    com.netflix.hystrix.HystrixCommand<ResponseEntity<Order>> getOrderById(@Min(1) @Max(5) @ApiParam(value = "ID of pet that needs to be fetched",required=true) @PathVariable("orderId") Long orderId
+);
 
 
     @ApiOperation(value = "Place an order for a pet", nickname = "placeOrder", notes = "", response = Order.class, tags={ "store", })
@@ -69,6 +71,7 @@ public interface StoreApi {
         produces = "application/json",
         consumes = "application/json",
         method = RequestMethod.POST)
-    com.netflix.hystrix.HystrixCommand<ResponseEntity<Order>> placeOrder(@ApiParam(value = "order placed for purchasing the pet" ,required=true )  @Valid @RequestBody Order body);
+    com.netflix.hystrix.HystrixCommand<ResponseEntity<Order>> placeOrder(
+@ApiParam(value = "order placed for purchasing the pet" ,required=true )  @Valid @RequestBody Order body);
 
 }
