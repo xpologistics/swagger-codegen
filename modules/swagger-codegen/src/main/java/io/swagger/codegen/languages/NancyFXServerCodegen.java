@@ -38,7 +38,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Multimap;
 
-public class NancyFXServerCodegen extends AbstractCSharpCodegen {
+public class NancyFXServerCodegen extends AbstractCSharpCodegenNonNull {
     private static final Logger log = LoggerFactory.getLogger(NancyFXServerCodegen.class);
 
     private static final String API_NAMESPACE = "Modules";

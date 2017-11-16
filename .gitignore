@@ -173,6 +173,7 @@ samples/server/petstore/aspnetcore/.vs/
 effective.pom
 # kotlin
 samples/client/petstore/kotlin/src/main/kotlin/test/
+samples/client/petstore/kotlin/bin/
 \?
 
 # haskell
@@ -187,3 +188,7 @@ cabal.project.local
 samples/client/petstore/elixir/_build/
 samples/client/petstore/elixir/deps/
 samples/client/petstore/elixir/mix.lock
+
+samples/client/petstore/groovy/bin/
+samples/client/petstore-security-test/scala/bin/
+
