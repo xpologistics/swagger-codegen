@@ -12,12 +12,11 @@ namespace {{packageName}}.{{packageContext}}.Models
     {{>innerModelEnum}}{{/parent}}{{/isEnum}}{{#items.isEnum}}
     {{#items}}{{>innerModelEnum}}{{/items}}{{/items.isEnum}}{{/vars}}
 
-/// <summary>
+    /// <summary>
     /// {{#description}}{{.}}{{/description}}{{^description}}{{classname}}{{/description}}
     /// </summary>
     public class {{classname}} {{#parent}}: {{{parent}}}{{/parent}}
-    { {{#vars}}{{^isInherited}}        
-        
+    { {{#vars}}{{^isInherited}}
         /// <summary>
         /// {{^description}}{{{name}}}{{/description}}{{#description}}{{description}}{{/description}}
         /// </summary>
